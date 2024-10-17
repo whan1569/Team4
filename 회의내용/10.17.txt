@@ -1,0 +1,1 @@
+LGHelloVision Data school 에서 제공하는 HelloVision 데이터로 선행학습 모델 제안 -최재원
