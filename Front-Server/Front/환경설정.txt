@@ -1,0 +1,78 @@
+# React Native Android 개발 환경 설정
+
+## 1. 필수 소프트웨어
+   - **Node.js**: JavaScript 실행 환경
+     - 설치 사이트: https://nodejs.org/
+   - **npm**: Node.js의 패키지 관리자
+     - Node.js 설치 시 자동으로 설치됨
+
+## 2. Android 개발 환경
+   - **Java Development Kit (JDK)**
+     - 최소 JDK 17 이상 필요
+     - 설치: https://adoptopenjdk.net/ (또는 Oracle JDK 사용 가능)
+     - React Native는 JDK 17 이상을 요구하며, 버전 11도 호환되지만, 17 이상의 버전 사용 권장.
+
+   - **Android Studio**
+     - 설치: https://developer.android.com/studio
+     - Android Studio 설치 후, SDK 및 Emulator도 설치 필요
+
+## 3. 필수 Android SDK 및 AVD 설정
+   - **Android SDK**: Android 앱 개발에 필요한 도구들
+     - Android Studio 설치 후 **SDK Manager**에서 아래 구성 요소 설치:
+       - **SDK Platforms**:
+         - Android 11.0 (API Level 30) 이상
+       - **SDK Tools**:
+         - Android SDK Build-Tools
+         - Android SDK Platform-Tools
+         - Android Emulator
+         - Intel x86 Emulator Accelerator (HAXM installer)
+     - **AVD (Android Virtual Device)**:
+       - 에뮬레이터를 사용하려면 AVD Manager에서 가상 기기 설정 후 실행
+
+## 4. 환경 변수 설정
+   - **ANDROID_HOME**:
+     - Android SDK 경로 설정
+     - 예시: `C:\Users\user\AppData\Local\Android\Sdk`
+     - 환경 변수 설정 방법:
+       - **Windows**:
+         1. **내 PC > 속성 > 고급 시스템 설정**을 선택
+         2. **환경 변수** 클릭
+         3. **시스템 변수**에서 `ANDROID_HOME` 추가 (값: `C:\Users\user\AppData\Local\Android\Sdk`)
+       - **Path** 환경 변수에 `C:\Users\user\AppData\Local\Android\Sdk\platform-tools`와 `C:\Users\user\AppData\Local\Android\Sdk\tools` 추가
+
+   - **JAVA_HOME**:
+     - Java JDK 경로 설정
+     - 예시: `C:\Program Files\AdoptOpenJDK\jdk-17`
+     - 환경 변수 설정:
+       - **Windows**:
+         1. **내 PC > 속성 > 고급 시스템 설정**
+         2. **환경 변수** 클릭
+         3. **시스템 변수**에서 `JAVA_HOME` 추가 (값: `C:\Program Files\AdoptOpenJDK\jdk-17`)
+
+## 5. Android Emulator 및 장치 연결
+   - **ADB**: Android Debug Bridge
+     - 기기를 USB로 연결한 후, **USB 디버깅** 활성화
+     - **명령어**: `adb devices`
+     - 연결된 기기 또는 에뮬레이터가 나열되어야 함
+
+## 6. React Native 설치 및 실행
+   - **React Native CLI 설치**:
+     - 명령어: `npm install -g react-native-cli`
+   - **프로젝트 생성**:
+     - 명령어: `npx react-native init ProjectName`
+   - **안드로이드 앱 실행**:
+     - 명령어: `npx react-native run-android`
+   
+## 7. 문제 해결 및 유용한 명령어
+   - **React Native 환경 설정 상태 확인**:
+     - 명령어: `npx react-native doctor`
+   - **Metro Bundler 실행**:
+     - 명령어: `npm start` 또는 `react-native start`
+   - **Android 장치 상태 확인**:
+     - 명령어: `adb devices`
+
+## 8. 기타 설치 및 업데이트
+   - **SDK Tools 업데이트**:
+     - Android Studio에서 **SDK Manager**를 통해 최신 SDK 도구 설치 및 업데이트
+   - **Gradle**:
+     - `gradlew clean` 명령어를 통해 Gradle 캐시 정리 및 빌드 오류 해결
