@@ -1,0 +1,16 @@
+문제 원인 및 해결 이유
+
+1. 라이브러리 호환성 문제
+   - react-native-camera-kit: 오래된 라이브러리로, 최신 React Native 버전과 호환되지 않아서 권한 요청 및 카메라 초기화에서 문제가 발생할 수 있음.
+   - react-native-vision-camera: 최신 React Native와 호환되는 라이브러리로, 최신 Android/iOS 카메라 API를 사용하여 안정적으로 동작함.
+
+2. 카메라 권한 처리
+   - react-native-camera-kit: 권한 요청 및 비동기 처리에서 오류 발생. 이미 허용된 권한이 반복적으로 요청되거나 장치 목록이 로딩되지 않는 문제가 발생.
+   - react-native-vision-camera: 권한 요청 및 카메라 장치 초기화가 명확히 설계되어 권한 문제나 초기화 문제를 효율적으로 처리함.
+
+3. 카메라 장치 로딩 문제
+   - react-native-camera-kit: 카메라 장치 로딩이 비정상적으로 지속됨. 장치 목록이 제대로 로딩되지 않거나 카메라가 제대로 초기화되지 않음.
+   - react-native-vision-camera: 장치 초기화 과정이 명확히 이루어져, 장치 로딩이 정상적으로 처리됨.
+
+결론:
+react-native-camera-kit 라이브러리는 오래된 상태로 최신 React Native와의 호환성 문제를 일으켰고, 카메라 장치 초기화와 권한 요청에서 오류가 발생했습니다. 반면, react-native-vision-camera는 최신 버전의 React Native와 잘 호환되어 카메라 장치 초기화 및 권한 요청을 정상적으로 처리할 수 있었습니다.

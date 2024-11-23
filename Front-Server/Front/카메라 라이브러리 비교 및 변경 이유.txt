@@ -1,0 +1,20 @@
+카메라 라이브러리 비교 및 변경 이유
+
+1. 권한 요청 및 초기화 방식 차이
+   - `react-native-camera-kit`: 권한 요청 및 초기화가 간혹 불안정하게 처리됨. 특정 기기에서 권한 요청이 제대로 되지 않거나 초기화 문제 발생 가능.
+   - `react-native-vision-camera`: 권한 요청과 카메라 초기화가 명확하고 안정적이며 최신 React Native 버전과 호환성이 좋음.
+
+2. 카메라 장치 및 하드웨어 지원
+   - `react-native-camera-kit`: 기본적인 카메라 기능만 제공하고 고급 제어나 최적화가 부족.
+   - `react-native-vision-camera`: 다양한 카메라 장치와 고급 기능을 잘 지원. `CameraX`와의 통합으로 최신 Android 기기와 잘 호환됨.
+
+3. 비동기 처리 및 성능
+   - `react-native-camera-kit`: 비동기 처리에서 기기나 상황에 따라 문제가 발생할 수 있음. 장치가 응답하지 않거나 권한 요청이 두 번 발생할 수 있음.
+   - `react-native-vision-camera`: 비동기 처리와 성능 최적화가 잘 되어 있음. 실시간 비디오 스트리밍에 적합.
+
+4. 라이브러리의 내부 처리 차이
+   - `react-native-camera-kit`: 구식 API 사용, 최신 React Native 변경 사항과의 호환성 부족.
+   - `react-native-vision-camera`: 최신 카메라 API와 React Native의 호환성 높음. 최신 기기에서 발생할 수 있는 문제 해결에 유리.
+
+결론:
+- `react-native-vision-camera`는 권한 처리, 카메라 초기화, 장치 호환성 및 성능 최적화 측면에서 더 안정적이고 강력한 지원을 제공하여 카메라가 정상적으로 작동함.
