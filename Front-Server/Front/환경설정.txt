@@ -57,7 +57,7 @@
 
 ## 6. React Native 설치 및 실행
    - **React Native CLI 설치**:
-     - 명령어: `npm install -g react-native-cli`
+     - 명령어: `npm install -g react-native-cli` , `npx @react-native-community/cli init MyApp`
    - **프로젝트 생성**:
      - 명령어: `npx react-native init ProjectName`
    - **안드로이드 앱 실행**:

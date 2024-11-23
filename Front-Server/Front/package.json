@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-native-permissions": "^5.2.0",
+    "react-native-vision-camera": "^4.6.1"
+  }
+}
